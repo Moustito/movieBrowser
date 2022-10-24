@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.card {
+  width: 258px;
+  height: 359px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 42.1%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  border-radius: 30px;
+  padding: 16px;
+
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+
+  color: #ffffff;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.5), 2px 2px 2px rgba(206, 89, 55, 0);
+
+  margin-top: 80%;
+}
+
+.rate {
+  width: 77px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  grid-template-areas:
+    'imdb imdb'
+    'img rating';
+
+  padding: 6px 10px 9px 12px;
+  margin-left: 60%;
+}
+.imdb {
+  grid-area: imdb;
+  margin: 0;
+  text-align: left;
+}
+.rate img {
+  grid-area: img;
+}
+.rating {
+  grid-area: rating;
+  margin: 0;
+  text-align: left;
+}
+
+.backgroundGlass {
+  /* background-color: black; */
+  background: rgba(218, 218, 218, 0.3);
+  backdrop-filter: blur(2.405px);
+  border-radius: 20px;
+}

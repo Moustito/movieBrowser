@@ -22,21 +22,15 @@ function App() {
       setData(result.data);
     };
     fetchData();
-    // console.log(data.id);
-    // console.log(data.poster_path);
-    console.log(data.name);
-    // console.log(data.runtime);
-    // console.log(data.vote_average);
-    // console.log(data.release_date);
-    // console.log(data.genres);
-    // console.log(data.overview);
-    console.log(data.results);
   }, []);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home data={data} setData={setData} />} />
+        <Route
+          path="/"
+          element={<Home data={data.results} setData={setData} />}
+        />
         <Route path="/search" element={<Search />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/*" element={<NoMatch />} />
@@ -47,6 +41,3 @@ function App() {
 }
 
 export default App;
-
-// Trending
-// https://api.themoviedb.org/3/trending/all/week?api_key=de254949dc1b811372f9de427feafa91&language=fr-FR

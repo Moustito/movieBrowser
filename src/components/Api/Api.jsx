@@ -1,12 +1,6 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
 import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
-import Home from './pages/Home/Home';
-import Navbar from './components/Navbar/Navbar';
-import NoMatch from './pages/NoMatch/NoMatch';
-import Search from './pages/Search/Search';
-import Profil from './pages/Profil/Profil';
 
 function App() {
   const [data, setData] = useState([]);
