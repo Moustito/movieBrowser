@@ -27,6 +27,10 @@ function App() {
 
   return (
     <div className="App">
+      <h1>
+        <span className="gradient">Movie</span>
+        Browser
+      </h1>
       <Routes>
         <Route path="/" element={<Home data={data.results} />} />
         <Route path="/search" element={<Search />} />

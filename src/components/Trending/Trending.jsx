@@ -32,14 +32,14 @@ export default function Trending({ data }) {
         } else className = 'card';
 
         function handleClick() {
-          if (i === index) {
-            console.log('active');
-          } else if (i === indexRight) {
-            console.log('right');
+          if (i === indexRight) {
             setIndex((index + 1) % data.length);
+            console.log(i);
+            console.log(index);
           } else if (i === indexLeft) {
-            console.log('left');
             setIndex((index - 1) % data.length);
+            console.log(i);
+            console.log(index);
           }
         }
 

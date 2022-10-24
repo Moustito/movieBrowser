@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
+  /* identical to box height */
 
   letter-spacing: 0.02em;
 
   color: #ffffff;
+
+  margin-top: 31px;
+  margin-left: 24px;
 }
 .card {
   width: 258px;
@@ -25,7 +29,7 @@ h2 {
   padding: 16px;
 
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 9.5%;
   margin: auto;
   cursor: pointer;
@@ -90,6 +94,17 @@ h2 {
   grid-area: imdb;
   margin: 0;
   text-align: left;
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
+
+  color: #ffffff;
 }
 .rate img {
   grid-area: img;
@@ -98,6 +113,15 @@ h2 {
   grid-area: rating;
   margin: 0;
   text-align: left;
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+
+  color: #ffffff;
 }
 
 .backgroundGlass {
