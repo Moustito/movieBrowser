@@ -8,6 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 import NoMatch from './pages/NoMatch/NoMatch';
 import Search from './pages/Search/Search';
 import Profil from './pages/Profil/Profil';
+import Movie from './pages/Movie/Movie';
 
 function App() {
   const [data, setData] = useState([]);
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<Home data={data.results} />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profil" element={<Profil />} />
+        <Route path="/movie" element={<Movie />} />
         <Route path="/*" element={<NoMatch />} />
       </Routes>
       <Navbar />

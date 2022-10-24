@@ -2,9 +2,11 @@ import React from 'react';
 import star from '../../assets/images/star.png';
 import { useState } from 'react';
 import '../../assets/styles/Trending.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Trending({ data }) {
   const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
 
   const mod = (n, m) => {
     let result = n % m;
@@ -31,8 +33,11 @@ export default function Trending({ data }) {
           className = 'card card--left';
         } else className = 'card';
 
-        function handleClick() {
-          if (i === indexRight) {
+        function handleClick(id) {
+          if (i === index) {
+            console.log(id);
+            // navigate('/movie');
+          } else if (i === indexRight) {
             setIndex((index + 1) % data.length);
             console.log(i);
             console.log(index);
@@ -50,7 +55,7 @@ export default function Trending({ data }) {
               backgroundImage: `url(http://image.tmdb.org/t/p/w300/${item.poster_path})`,
             }}
             className={className}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(item.id)}
           >
             <div className="rate backgroundGlass">
               <p className="imdb">IMDb</p>
