@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+
+  letter-spacing: 0.02em;
+
+  color: #ffffff;
+}
 .card {
   width: 258px;
   height: 359px;
@@ -13,7 +24,34 @@
   border-radius: 30px;
   padding: 16px;
 
-  margin-bottom: 10px;
+  position: absolute;
+  top: 40%;
+  left: 9.5%;
+  margin: auto;
+  cursor: pointer;
+  z-index: 0;
+  opacity: 0;
+  text-align: center;
+
+  transition: 500ms;
+}
+
+.card--active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 99;
+}
+
+.card--left {
+  transform: translateX(-95%) scale(0.8);
+  transition: 500ms;
+  opacity: 0.3;
+}
+
+.card--right {
+  transform: translateX(95%) scale(0.8);
+  transition: 500ms;
+  opacity: 0.3;
 }
 
 .card h3 {

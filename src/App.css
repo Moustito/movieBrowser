@@ -1,10 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1440px;
+  max-height: 812px;
 }
 
-.Nav__Link {
-  padding: 5px;
+html {
+  background: #15141f;
 }

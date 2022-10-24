@@ -1,0 +1,13 @@
+.nav {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  background: #15141f;
+}
+.nav__link {
+  padding: 5px;
+}

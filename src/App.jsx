@@ -1,3 +1,4 @@
+import './assets/styles/reset.css';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import React, { Fragment, useState, useEffect } from 'react';
@@ -27,10 +28,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/"
-          element={<Home data={data.results} setData={setData} />}
-        />
+        <Route path="/" element={<Home data={data.results} />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/*" element={<NoMatch />} />
