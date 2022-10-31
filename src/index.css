@@ -1,2 +1,23 @@
-html {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #333;
+}
+.gradient {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+
+  letter-spacing: 0.02em;
+
+  padding: 28px;
+  color: white;
+}
+
+.gradient span {
+  color: #ff5a2d;
 }

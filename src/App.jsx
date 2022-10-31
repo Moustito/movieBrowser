@@ -1,43 +1,29 @@
-import './assets/styles/reset.css';
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import React, { Fragment, useState, useEffect } from 'react';
-import axios from 'axios';
-import Home from './pages/Home/Home';
-import Navbar from './components/Navbar/Navbar';
-import NoMatch from './pages/NoMatch/NoMatch';
-import Search from './pages/Search/Search';
-import Profil from './pages/Profil/Profil';
-import Movie from './pages/Movie/Movie';
+import Home from './Pages/Home';
+import Search from './Pages/Search';
+import Profil from './Pages/Profil';
+import Navbar from './Components/NavBar';
+import Movie from './Pages/Movie';
+import { useState } from 'react';
 
 function App() {
-  const [data, setData] = useState([]);
-  let ApiKey = 'de254949dc1b811372f9de427feafa91';
+  //State
+  const [getId, setGetId] = useState();
+  //Comportements
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'https://api.themoviedb.org/3/trending/all/week?api_key=' +
-          ApiKey +
-          '&language=fr-FR'
-      );
-      setData(result.data);
-    };
-    fetchData();
-  }, []);
-
+  //Rendez
   return (
-    <div className="App">
-      <h1>
-        <span className="gradient">Movie</span>
+    <div className="">
+      <h1 className="gradient">
+        <span>Movie</span>
         Browser
       </h1>
       <Routes>
-        <Route path="/" element={<Home data={data.results} />} />
+        <Route path="/" element={<Home setGetId={setGetId} />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profil" element={<Profil />} />
-        <Route path="/movie" element={<Movie />} />
-        <Route path="/*" element={<NoMatch />} />
+        <Route path="/movie" element={<Movie Id={getId} />} />
+        {/* <Route path="/*" element={<NoMatch />} /> */}
       </Routes>
       <Navbar />
     </div>
