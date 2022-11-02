@@ -1,19 +1,17 @@
-import search from '../assets/images/icons/search.png';
+import { useState } from 'react';
+import List from '../Components/List';
+import Research from '../Components/Research';
 
 export default function Search() {
+  //State
+  const [searching, setSearching] = useState(null);
+
+  //Comportements
+  //Render
   return (
     <div>
-      <h1>Search</h1>
-      <div className="bg-gray-800 rounded-3xl flex p-3">
-        <button>
-          <img src={search} alt="" />
-        </button>
-        <input
-          className="bg-gray-800"
-          type="text"
-          placeholder="Search your film..."
-        />
-      </div>
+      <Research setSearching={setSearching} />
+      {searching != null ? <List searching={searching} /> : null}
     </div>
   );
 }

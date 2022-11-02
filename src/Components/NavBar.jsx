@@ -5,7 +5,10 @@ import profileIcon from '../assets/images/icons/Profil-Icon.png';
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-around pt-2.5">
+    <nav
+      style={{ background: '#7E7E7E' }}
+      className="flex justify-around pt-2.5 absolute -bottom-0 w-full"
+    >
       <Link to="/">
         <img src={homeIcon} alt="Home-Icon" />
       </Link>
