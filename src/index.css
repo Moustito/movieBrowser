@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  background-color: #333;
+  background-color: #15141f;
+  margin-bottom: 80px;
 }
 .gradient {
   font-family: 'Lato';

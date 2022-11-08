@@ -35,13 +35,13 @@ export default function Research({ setSearching }) {
 
   //Render
   return (
-    <div className="bg-gray-800 rounded-3xl flex p-3">
-      <form action="submit" onSubmit={handleSubmit}>
-        <button>
+    <div className="bg-gray-800 rounded-3xl flex p-3 m-6">
+      <form className="flex" action="submit" onSubmit={handleSubmit}>
+        <button className="mr-4">
           <img src={search} />
         </button>
         <input
-          className="bg-gray-800 text-white"
+          className="bg-gray-800 text-white text-gray-600"
           value={newSearch}
           type="text"
           placeholder="Search your film..."

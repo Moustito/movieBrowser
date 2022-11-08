@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 import Home from './Pages/Home';
 import Search from './Pages/Search';
 import Profil from './Pages/Profil';
@@ -13,7 +13,7 @@ function App() {
 
   //Rendez
   return (
-    <div className="">
+    <div>
       <h1 className="gradient">
         <span>Movie</span>
         Browser
@@ -22,7 +22,10 @@ function App() {
         <Route path="/" element={<Home setGetId={setGetId} />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profil" element={<Profil />} />
-        <Route path="/movie" element={<Movie Id={getId} />} />
+        <Route
+          path="/movie"
+          element={<Movie setGetId={setGetId} Id={getId} />}
+        />
         {/* <Route path="/*" element={<NoMatch />} /> */}
       </Routes>
       <Navbar />

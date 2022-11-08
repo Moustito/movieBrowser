@@ -1,14 +1,23 @@
 import '../Styles/Caroussel.css';
+import { Link } from 'react-router-dom';
 
-export default function Carousel({ data }) {
+export default function Carousel({ data, setGetId }) {
   //State
   //Comportements
+  function getId(id) {
+    setGetId(id);
+  }
 
   //Render
   return (
-    <div className="media_scroller">
+    <div className="media_scroller text-white pl-6">
       {data.map((item) => (
-        <div className="card" key={item.id}>
+        <Link
+          className="card"
+          key={item.id}
+          to="/movie"
+          onClick={() => getId(item.id)}
+        >
           <div className="box-image">
             <img
               className="image"
@@ -27,7 +36,7 @@ export default function Carousel({ data }) {
               )
             </span>
           </p>
-        </div>
+        </Link>
       ))}
     </div>
   );

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import ShowMoreText from 'react-show-more-text';
+import axios from 'axios';
 import '../Styles/Spotlight.css';
-import Api from './Api';
+import star from '../assets/images/icons/Star-Details.png';
+import clock from '../assets/images/icons/Clock-Details.png';
 
 export default function Spotlight({ Id }) {
   //State
@@ -29,21 +31,64 @@ export default function Spotlight({ Id }) {
 
   //Render
   return (
-    <div>
+    <div className="pb-14 text-white">
       <Link to="/">Retour</Link>
       <img
+        className="block"
         src={`http://image.tmdb.org/t/p/w500/${data.backdrop_path}`}
         alt={`poster ${data.name}${data.title}`}
       />
-      <p>
-        {data.name}
-        {data.title}
-      </p>
-      <p>{data.runtime} minutes</p>
-      <p>{data.vote_average} (IMDb)</p>
-      <p>{data.release_date}</p>
-      {/* <p>{data.genres}</p> */}
-      <p>{data.overview}</p>
+      <section className="pl-6 pt-6">
+        <div>
+          <p className="font-medium text-2xl leading-7 tracking-tight mb-2">
+            {data.name}
+            {data.title}
+          </p>
+          <div className="flex">
+            <img
+              className="place-self-center pr-1.5"
+              src={clock}
+              alt="runtime icons"
+            />
+            <p className="mr-3">{data.runtime} minutes</p>
+            <img
+              className="h-3 place-self-center pr-1.5"
+              src={star}
+              alt="vote average icons"
+            />
+            <p>{data.vote_average} (IMDb)</p>
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div className="flex">
+          <div className="mr-12">
+            <p className="font-medium text-base leading-7 tracking-tight">
+              Release date
+            </p>
+            <p className="text-gray-400">{data.release_date}</p>
+          </div>
+          <div>
+            <p className="font-medium text-base leading-7 tracking-tight">
+              Genre
+            </p>
+            {/* {data.genres.map((genre) => {
+              <p key={genre.id}>genre</p>;
+            })} */}
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div>
+          <p>Synopsis</p>
+          <ShowMoreText
+            className="text-gray-400"
+            lines={3}
+            more="Show more"
+            less="Show less"
+          >
+            {data.overview}
+          </ShowMoreText>
+        </div>
+      </section>
     </div>
   );
 }

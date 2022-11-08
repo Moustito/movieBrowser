@@ -5,7 +5,7 @@ export default function List({ searching }) {
 
   //Render
   return (
-    <section className="flex flex-wrap max-w-full">
+    <section className="flex flex-wrap max-w-full justify-center">
       {searching.map((item) => (
         <div className="p-3" key={item.id}>
           <div className="w-40">
